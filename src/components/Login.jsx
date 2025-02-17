@@ -35,9 +35,9 @@ const Login = () => {
         // Redirect based on role
         setTimeout(() => {
           if (data.user.role === "admin") {
-            navigate("/admindash");
+            navigate("/AdminDashboard");
           } else if (data.user.role === "owner") {
-            navigate("/ownerdash");
+            navigate("/OwnerDashboard");
           } else {
             navigate("/userdash");
           }

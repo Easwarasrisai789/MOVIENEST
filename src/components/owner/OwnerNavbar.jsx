@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const UNavbar = () => {
+const OwnerNavbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -14,8 +14,12 @@ const UNavbar = () => {
     <Sidebar>
       <NavLogo>MOVIENEST</NavLogo>
       <NavLinks>
-        <NavItem onClick={() => navigate("/userdash")}>Dashboard</NavItem>
-        <NavItem onClick={() => navigate("/profile")}>Profile</NavItem>
+        <NavItem onClick={() => navigate("/OwnerDashboard")}>Owner Dashboard</NavItem>
+        <NavItem onClick={() => navigate("/report-users")}>Report Users</NavItem>
+        <NavItem onClick={() => navigate("/manage-movies")}>Manage Movies</NavItem>
+        <NavItem onClick={() => navigate("/reports")}>Reports</NavItem>
+        {/* New Profile Item */}
+        <NavItem onClick={() => navigate("/OwnerProfile")}>Profile</NavItem>
         <MenuDivider />
         <NavItem as="span" onClick={handleLogout}>
           Logout
@@ -25,7 +29,7 @@ const UNavbar = () => {
   );
 };
 
-export default UNavbar;
+export default OwnerNavbar;
 
 // Styled Components
 const Sidebar = styled.div`
@@ -59,11 +63,10 @@ const NavItem = styled.div`
   font-weight: 500;
   padding: 10px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 
   &:hover {
     background: #444;
-    color: #ff4444; /* Change text color on hover */
   }
 `;
 
